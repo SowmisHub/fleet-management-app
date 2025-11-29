@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Add Fleet</h2>
+            <form id="fleetForm">
+                <label >Reg No of Vehicle</label>
+                <input type="text" id="regNo" placeholder="Reg no of vehicle">
+                <label>Category</label>
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Car">Car</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+                <label >Driver Name</label>
+                <input type="text" id="driver" placeholder="Driver Name">
+
+                <label>Availability</label>
+                <select  id="Availability">
+                    <option value="">Select</option>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable"></option>
+                </select>
+
+                <button type="submit">Add Fleet</button>
+            </form>
+        </div>
+
+        <div class="main">
+            <div class="navbar">
+                <select id="filterCategory">
+                    <option value="All">All Category</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Car">Car</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+                <select  id="filterAvailability">
+                    <option value="All">All Availability</option>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable"></option>
+                </select>
+
+                <button id="clearFilterBtn">Clear Filter</button>
+            </div>
+
+            <!-- Cards -->
+             <div id="cardsContainer"></div>
+        </div>
+
+    </div>
+</body>
+</html>
