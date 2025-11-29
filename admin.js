@@ -13,6 +13,7 @@ let vehicleImgUrl="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80
             const regNo=regNoInput.value.trim();
             const category=categoryInput.value;
             const driver =driverInput.value.trim();
+            const status=availabilityInput.value;
 
             if(regNo==="" || category==="" || driver==="" || status===""){
                 alert("Please Fill all fields")
