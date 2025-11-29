@@ -28,3 +28,10 @@ body{
 .side label{
     font-size: 12px;
 }
+
+.side input , .sidebar select, .sidebar button {
+    width: 100px;
+    padding: 6px;
+    margin: 6px 0 10px 0;
+    font-size: 12px;
+}
