@@ -98,7 +98,71 @@
             renderCards();
         });
 
-        
+        const filterCategory=document.getElementById("filterCategory")
+        const filterAvailability=document.getElementById("filterAvailability")
+        const clearFilterBtn=document.getElementById("clearFilterBtn")
+        const cardsContainer=document.getElementById("cardsContainer");
+
+        function renderCards(){
+            cardsContainer.innerHtml="";
+            const catFilter=filterCategory.value;
+            const availFilter=filterAvailability.value;
+
+            for(let i=0;i<vehicles.length;i++){
+                const v=vehicles[i];
+                if(catFilter!=="All" && v.category!== availFilter){
+                    continue;
+                }
+                if(availFilter !=="All" && v.status 1== availFilter){
+                    continue;
+                }
+
+                const card = document.createElement("div");
+                card.className="card";
+                const img=document.createElement("img");
+                img.src=vehicleImgUrl;
+                card.appendChild(img);
+                const p1=document.createElement("p");
+                p1.textContent="Reg No: " + v,regNo;
+                card.appendChild(p1);
+
+                const p2=document.createElement("p");
+                p2.textContent="Category: " + v.category;
+                card.appendChild(p2);
+
+                const p3=document.createElement("p");
+                p3.textContent="Driver: " + v.driver;
+                card.appendChild(p3);
+
+                const p4=document.createElement("p");
+                p4.textContent="Status: " + v.status;
+                card.appendChild(p4);
+
+                const btnUpdate=document.createElement("button ");
+                btnUpdate.textContent="Update Driver ";
+                btnUpdate.addEventListener("click", function(){
+                    updateDriver(v.id);
+                });
+                card.appendChild(btnUpdate);
+
+                const btnChange=document.createElement("button");
+                btnChange.textContent="Change Availability";
+                btnChange.addEventListener("click", function(){
+                    changeAvailability(v.id)
+                });
+                card.appendChild(btnChange);
+
+                const btnDelete=document.createElement("button");
+                btnDelete.textContent="Delete Vehicle";
+                btnDelete.addEventListener("click", function(){
+                    deleteVehicle(v.id)
+                });
+                card.appendChild(btnDelete);
+
+                cardsContainer.appendChild(card);
+
+            }
+        }
     </script>
 </body>
 </html>
